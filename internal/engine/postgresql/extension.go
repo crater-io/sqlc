@@ -3,8 +3,8 @@
 package postgresql
 
 import (
-	"github.com/kyleconroy/sqlc/internal/engine/postgresql/contrib"
-	"github.com/kyleconroy/sqlc/internal/sql/catalog"
+	"github.com/crater-io/sqlc/internal/engine/postgresql/contrib"
+	"github.com/crater-io/sqlc/internal/sql/catalog"
 )
 
 func loadExtension(name string) *catalog.Schema {

@@ -16,11 +16,11 @@ import (
 	"github.com/spf13/pflag"
 	"gopkg.in/yaml.v3"
 
-	"github.com/kyleconroy/sqlc/internal/codegen/golang"
-	"github.com/kyleconroy/sqlc/internal/config"
-	"github.com/kyleconroy/sqlc/internal/debug"
-	"github.com/kyleconroy/sqlc/internal/info"
-	"github.com/kyleconroy/sqlc/internal/tracer"
+	"github.com/crater-io/sqlc/internal/codegen/golang"
+	"github.com/crater-io/sqlc/internal/config"
+	"github.com/crater-io/sqlc/internal/debug"
+	"github.com/crater-io/sqlc/internal/info"
+	"github.com/crater-io/sqlc/internal/tracer"
 )
 
 func init() {

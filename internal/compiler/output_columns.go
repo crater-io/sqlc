@@ -4,12 +4,12 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/kyleconroy/sqlc/internal/sql/catalog"
+	"github.com/crater-io/sqlc/internal/sql/catalog"
 
-	"github.com/kyleconroy/sqlc/internal/sql/ast"
-	"github.com/kyleconroy/sqlc/internal/sql/astutils"
-	"github.com/kyleconroy/sqlc/internal/sql/lang"
-	"github.com/kyleconroy/sqlc/internal/sql/sqlerr"
+	"github.com/crater-io/sqlc/internal/sql/ast"
+	"github.com/crater-io/sqlc/internal/sql/astutils"
+	"github.com/crater-io/sqlc/internal/sql/lang"
+	"github.com/crater-io/sqlc/internal/sql/sqlerr"
 )
 
 // OutputColumns determines which columns a statement will output

@@ -3,8 +3,8 @@ package catalog
 import (
 	"errors"
 	"fmt"
-	"github.com/kyleconroy/sqlc/internal/sql/ast"
-	"github.com/kyleconroy/sqlc/internal/sql/sqlerr"
+	"github.com/crater-io/sqlc/internal/sql/ast"
+	"github.com/crater-io/sqlc/internal/sql/sqlerr"
 )
 
 type Type interface {

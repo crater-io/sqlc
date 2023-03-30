@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kyleconroy/sqlc/internal/config"
-	"github.com/kyleconroy/sqlc/internal/source"
-	"github.com/kyleconroy/sqlc/internal/sql/ast"
-	"github.com/kyleconroy/sqlc/internal/sql/astutils"
+	"github.com/crater-io/sqlc/internal/config"
+	"github.com/crater-io/sqlc/internal/source"
+	"github.com/crater-io/sqlc/internal/sql/ast"
+	"github.com/crater-io/sqlc/internal/sql/astutils"
 )
 
 func (c *Compiler) expand(qc *QueryCatalog, raw *ast.RawStmt) ([]source.Edit, error) {

@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/kyleconroy/sqlc/internal/pattern"
-	"github.com/kyleconroy/sqlc/internal/sql/ast"
+	"github.com/crater-io/sqlc/internal/pattern"
+	"github.com/crater-io/sqlc/internal/sql/ast"
 )
 
 type Override struct {
@@ -14,7 +14,7 @@ type Override struct {
 	GoType GoType `json:"go_type" yaml:"go_type"`
 
 	// additional Go struct tags to add to this field, in raw Go struct tag form, e.g. `validate:"required" x:"y,z"`
-	// see https://github.com/kyleconroy/sqlc/issues/534
+	// see https://github.com/crater-io/sqlc/issues/534
 	GoStructTag GoStructTag `json:"go_struct_tag" yaml:"go_struct_tag"`
 
 	// fully qualified name of the Go type, e.g. `github.com/segmentio/ksuid.KSUID`

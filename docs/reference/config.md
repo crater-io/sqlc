@@ -8,20 +8,20 @@ file must be in the directory where the `sqlc` command is run.
 ```yaml
 version: "2"
 sql:
-- schema: "postgresql/schema.sql"
-  queries: "postgresql/query.sql"
-  engine: "postgresql"
-  gen:
-    go: 
-      package: "authors"
-      out: "postgresql"
-- schema: "mysql/schema.sql"
-  queries: "mysql/query.sql"
-  engine: "mysql"
-  gen:
-    go:
-      package: "authors"
-      out: "mysql"
+  - schema: "postgresql/schema.sql"
+    queries: "postgresql/query.sql"
+    engine: "postgresql"
+    gen:
+      go:
+        package: "authors"
+        out: "postgresql"
+  - schema: "mysql/schema.sql"
+    queries: "mysql/query.sql"
+    engine: "mysql"
+    gen:
+      go:
+        package: "authors"
+        out: "mysql"
 ```
 
 ### sql
@@ -40,7 +40,8 @@ Each mapping in the `sql` collection has the following keys:
   - A mapping to configure built-in code generators. See [gen](#gen) for the supported keys.
 - `strict_function_checks`
   - If true, return an error if a called SQL function does not exist. Defaults to `false`.
-  - 
+  -
+
 ### codegen
 
 The `codegen` mapping supports the following keys:
@@ -53,26 +54,26 @@ The `codegen` mapping supports the following keys:
   - A mapping of plugin-specific options.
 
 ```yaml
-version: '2'
+version: "2"
 plugins:
-- name: py
-  wasm:
-    url: https://github.com/tabbed/sqlc-gen-python/releases/download/v0.16.0-alpha/sqlc-gen-python.wasm
-    sha256: 428476c7408fd4c032da4ec74e8a7344f4fa75e0f98a5a3302f238283b9b95f2
+  - name: py
+    wasm:
+      url: https://github.com/tabbed/sqlc-gen-python/releases/download/v0.16.0-alpha/sqlc-gen-python.wasm
+      sha256: 428476c7408fd4c032da4ec74e8a7344f4fa75e0f98a5a3302f238283b9b95f2
 sql:
-- schema: "schema.sql"
-  queries: "query.sql"
-  engine: postgresql
-  codegen:
-  - out: src/authors
-    plugin: py
-    options:
-      package: authors
-      emit_sync_querier: true
-      emit_async_querier: true
-      query_parameter_limit: 5
+  - schema: "schema.sql"
+    queries: "query.sql"
+    engine: postgresql
+    codegen:
+      - out: src/authors
+        plugin: py
+        options:
+          package: authors
+          emit_sync_querier: true
+          emit_async_querier: true
+          query_parameter_limit: 5
 ```
-  
+
 ### gen
 
 The `gen` mapping supports the following keys:
@@ -124,7 +125,7 @@ The `gen` mapping supports the following keys:
 - `rename`:
   - Customize the name of generated struct fields. Explained in detail on the `Renaming fields` section.
 - `overrides`:
-  - It is a collection of definitions that dictates which types are used to map a database types. Explained in detail on the  `Type overriding` section.
+  - It is a collection of definitions that dictates which types are used to map a database types. Explained in detail on the `Type overriding` section.
 
 ##### Renaming fields
 
@@ -145,15 +146,15 @@ field name to use.
 ```yaml
 version: "2"
 sql:
-- schema: "postgresql/schema.sql"
-  queries: "postgresql/query.sql"
-  engine: "postgresql"
-  gen:
-    go: 
-      package: "authors"
-      out: "postgresql"
-      rename:
-        spotify_url: "SpotifyURL"
+  - schema: "postgresql/schema.sql"
+    queries: "postgresql/query.sql"
+    engine: "postgresql"
+    gen:
+      go:
+        package: "authors"
+        out: "postgresql"
+        rename:
+          spotify_url: "SpotifyURL"
 ```
 
 ##### Type overriding
@@ -169,22 +170,22 @@ instead.
 ```yaml
 version: "2"
 sql:
-- schema: "postgresql/schema.sql"
-  queries: "postgresql/query.sql"
-  engine: "postgresql"
-  gen:
-    go: 
-      package: "authors"
-      out: "postgresql"
-      overrides:
-        - db_type: "uuid"
-          go_type: "github.com/gofrs/uuid.UUID"
+  - schema: "postgresql/schema.sql"
+    queries: "postgresql/query.sql"
+    engine: "postgresql"
+    gen:
+      go:
+        package: "authors"
+        out: "postgresql"
+        overrides:
+          - db_type: "uuid"
+            go_type: "github.com/gofrs/uuid.UUID"
 ```
 
 Each mapping of the `overrides` collection has the following keys:
 
 - `db_type`:
-  - The PostgreSQL or MySQL type to override. Find the full list of supported types in [postgresql_type.go](https://github.com/kyleconroy/sqlc/blob/main/internal/codegen/golang/postgresql_type.go#L12) or [mysql_type.go](https://github.com/kyleconroy/sqlc/blob/main/internal/codegen/golang/mysql_type.go#L12). Note that for Postgres you must use the pg_catalog prefixed names where available. Can't be used if the `column` key is defined.
+  - The PostgreSQL or MySQL type to override. Find the full list of supported types in [postgresql_type.go](https://github.com/crater-io/sqlc/blob/main/internal/codegen/golang/postgresql_type.go#L12) or [mysql_type.go](https://github.com/crater-io/sqlc/blob/main/internal/codegen/golang/mysql_type.go#L12). Note that for Postgres you must use the pg_catalog prefixed names where available. Can't be used if the `column` key is defined.
 - `column`
   - In case the type overriding should be done on specific a column of a table instead of a type. `column` should be of the form `table.column` but you can be even more specific by specifying `schema.table.column` or `catalog.schema.table.column`. Can't be used if the `db_type` key is defined.
 - `go_type`:
@@ -200,19 +201,19 @@ For more complicated import paths, the `go_type` can also be an object.
 ```yaml
 version: "2"
 sql:
-- schema: "postgresql/schema.sql"
-  queries: "postgresql/query.sql"
-  engine: "postgresql"
-  gen:
-    go: 
-      package: "authors"
-      out: "postgresql"
-      overrides:
-        - db_type: "uuid"
-          go_type:
-            import: "a/b/v2"
-            package: "b"
-            type: "MyType"
+  - schema: "postgresql/schema.sql"
+    queries: "postgresql/query.sql"
+    engine: "postgresql"
+    gen:
+      go:
+        package: "authors"
+        out: "postgresql"
+        overrides:
+          - db_type: "uuid"
+            go_type:
+              import: "a/b/v2"
+              package: "b"
+              type: "MyType"
 ```
 
 When generating code, entries using the `column` key will always have preference over
@@ -265,19 +266,19 @@ Each mapping in the `plugins` collection has the following keys:
     - The URL to fetch the WASM file. Supports the `https://` or `file://` schemes.
   - `sha256`
     - The SHA256 checksum for the downloaded file.
-   
+
 ```yaml
 version: 2
 plugins:
-- name: "py"
-  wasm: 
-    url: "https://github.com/tabbed/sqlc-gen-python/releases/download/v0.16.0-alpha/sqlc-gen-python.wasm"
-    sha256: "428476c7408fd4c032da4ec74e8a7344f4fa75e0f98a5a3302f238283b9b95f2"
-- name: "js"
-  process: 
-    cmd: "sqlc-gen-json"
+  - name: "py"
+    wasm:
+      url: "https://github.com/tabbed/sqlc-gen-python/releases/download/v0.16.0-alpha/sqlc-gen-python.wasm"
+      sha256: "428476c7408fd4c032da4ec74e8a7344f4fa75e0f98a5a3302f238283b9b95f2"
+  - name: "js"
+    process:
+      cmd: "sqlc-gen-json"
 ```
- 
+
 ### global overrides
 
 Sometimes, the same configuration must be done across various specfications of code generation.
@@ -302,7 +303,7 @@ sql:
   queries: "postgresql/query.sql"
   engine: "postgresql"
   gen:
-    go: 
+    go:
       package: "authors"
       out: "postgresql"
 - schema: "mysql/schema.sql"
@@ -424,7 +425,7 @@ overrides:
 Each override document has the following keys:
 
 - `db_type`:
-  - The PostgreSQL or MySQL type to override. Find the full list of supported types in [postgresql_type.go](https://github.com/kyleconroy/sqlc/blob/main/internal/codegen/golang/postgresql_type.go#L12) or [mysql_type.go](https://github.com/kyleconroy/sqlc/blob/main/internal/codegen/golang/mysql_type.go#L12). Note that for Postgres you must use the pg_catalog prefixed names where available.
+  - The PostgreSQL or MySQL type to override. Find the full list of supported types in [postgresql_type.go](https://github.com/crater-io/sqlc/blob/main/internal/codegen/golang/postgresql_type.go#L12) or [mysql_type.go](https://github.com/crater-io/sqlc/blob/main/internal/codegen/golang/mysql_type.go#L12). Note that for Postgres you must use the pg_catalog prefixed names where available.
 - `go_type`:
   - A fully qualified name to a Go type to use in the generated code.
 - `go_struct_tag`:

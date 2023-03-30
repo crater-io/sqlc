@@ -3,7 +3,7 @@ package ext
 import (
 	"context"
 
-	"github.com/kyleconroy/sqlc/internal/plugin"
+	"github.com/crater-io/sqlc/internal/plugin"
 )
 
 type Handler interface {

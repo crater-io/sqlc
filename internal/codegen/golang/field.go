@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/kyleconroy/sqlc/internal/plugin"
+	"github.com/crater-io/sqlc/internal/plugin"
 )
 
 type Field struct {

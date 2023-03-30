@@ -1,4 +1,4 @@
--- https://github.com/kyleconroy/sqlc/issues/437
+-- https://github.com/crater-io/sqlc/issues/437
 CREATE TABLE authors (
   id   BIGSERIAL PRIMARY KEY,
   name text      NOT NULL,

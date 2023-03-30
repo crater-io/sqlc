@@ -10,9 +10,9 @@ import (
 	"github.com/pingcap/tidb/parser"
 	_ "github.com/pingcap/tidb/parser/test_driver"
 
-	"github.com/kyleconroy/sqlc/internal/metadata"
-	"github.com/kyleconroy/sqlc/internal/sql/ast"
-	"github.com/kyleconroy/sqlc/internal/sql/sqlerr"
+	"github.com/crater-io/sqlc/internal/metadata"
+	"github.com/crater-io/sqlc/internal/sql/ast"
+	"github.com/crater-io/sqlc/internal/sql/sqlerr"
 )
 
 func NewParser() *Parser {

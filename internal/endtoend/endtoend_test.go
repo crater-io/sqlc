@@ -13,7 +13,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 
-	"github.com/kyleconroy/sqlc/internal/cmd"
+	"github.com/crater-io/sqlc/internal/cmd"
 )
 
 func TestExamples(t *testing.T) {

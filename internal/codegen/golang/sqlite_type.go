@@ -4,8 +4,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/kyleconroy/sqlc/internal/codegen/sdk"
-	"github.com/kyleconroy/sqlc/internal/plugin"
+	"github.com/crater-io/sqlc/internal/codegen/sdk"
+	"github.com/crater-io/sqlc/internal/plugin"
 )
 
 func sqliteType(req *plugin.CodeGenRequest, col *plugin.Column) string {

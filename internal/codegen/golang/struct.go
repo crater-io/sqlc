@@ -5,7 +5,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/kyleconroy/sqlc/internal/plugin"
+	"github.com/crater-io/sqlc/internal/plugin"
 )
 
 type Struct struct {

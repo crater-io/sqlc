@@ -7,8 +7,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/kyleconroy/sqlc/internal/codegen/json"
-	"github.com/kyleconroy/sqlc/internal/plugin"
+	"github.com/crater-io/sqlc/internal/codegen/json"
+	"github.com/crater-io/sqlc/internal/plugin"
 )
 
 func main() {

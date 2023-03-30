@@ -6,7 +6,7 @@ import (
 	"os"
 	"runtime/trace"
 
-	"github.com/kyleconroy/sqlc/internal/debug"
+	"github.com/crater-io/sqlc/internal/debug"
 )
 
 // Start starts Go's runtime tracing facility.

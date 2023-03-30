@@ -5,10 +5,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/kyleconroy/sqlc/internal/codegen/sdk"
-	"github.com/kyleconroy/sqlc/internal/inflection"
-	"github.com/kyleconroy/sqlc/internal/metadata"
-	"github.com/kyleconroy/sqlc/internal/plugin"
+	"github.com/crater-io/sqlc/internal/codegen/sdk"
+	"github.com/crater-io/sqlc/internal/inflection"
+	"github.com/crater-io/sqlc/internal/metadata"
+	"github.com/crater-io/sqlc/internal/plugin"
 )
 
 func buildEnums(req *plugin.CodeGenRequest) []Enum {

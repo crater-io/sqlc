@@ -1,7 +1,7 @@
 package catalog
 
 import (
-	"github.com/kyleconroy/sqlc/internal/sql/ast"
+	"github.com/crater-io/sqlc/internal/sql/ast"
 )
 
 // Catalog describes a database instance consisting of metadata in which database objects are defined

@@ -4,11 +4,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/kyleconroy/sqlc/internal/config"
-	"github.com/kyleconroy/sqlc/internal/sql/ast"
-	"github.com/kyleconroy/sqlc/internal/sql/astutils"
-	"github.com/kyleconroy/sqlc/internal/sql/catalog"
-	"github.com/kyleconroy/sqlc/internal/sql/sqlerr"
+	"github.com/crater-io/sqlc/internal/config"
+	"github.com/crater-io/sqlc/internal/sql/ast"
+	"github.com/crater-io/sqlc/internal/sql/astutils"
+	"github.com/crater-io/sqlc/internal/sql/catalog"
+	"github.com/crater-io/sqlc/internal/sql/sqlerr"
 )
 
 type funcCallVisitor struct {

@@ -3,9 +3,9 @@ package golang
 import (
 	"log"
 
-	"github.com/kyleconroy/sqlc/internal/codegen/sdk"
-	"github.com/kyleconroy/sqlc/internal/debug"
-	"github.com/kyleconroy/sqlc/internal/plugin"
+	"github.com/crater-io/sqlc/internal/codegen/sdk"
+	"github.com/crater-io/sqlc/internal/debug"
+	"github.com/crater-io/sqlc/internal/plugin"
 )
 
 func mysqlType(req *plugin.CodeGenRequest, col *plugin.Column) string {
